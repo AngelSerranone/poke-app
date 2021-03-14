@@ -1,0 +1,18 @@
+<head>
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
+</head>
+
+<div class="baraja">
+    <div *ngFor="let pokemon of teamList; let i=index" (click)="showDetails(i)">
+        <div class="container">
+            <img src={{pokemon.sprites.front_default}} alt="">
+            <h2>{{pokemon.name}}</h2>
+            <h3>{{pokemon.types[0].type.name}}<span *ngIf="pokemon.types.length == 2"> - {{pokemon.types[1].type.name}}</span></h3>
+            <app-pokemon-details *ngIf="showDetail[i]" [pokemon] = "pokemon" [id] = "pokemonList[i].id" 
+            (deleteIdEvent)="deletePokemon($event, i)"></app-pokemon-details>
+        </div>
+    </div>
+</div>
+
+
+

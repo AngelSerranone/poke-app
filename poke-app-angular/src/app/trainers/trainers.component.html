@@ -1,0 +1,74 @@
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
+</head>
+
+<body>
+    <div class="form">
+        <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+            <input ngModel required pattern="[a-zA-Z ]*" type="text" placeholder="Introduce your name"
+                #inputName="ngModel" name="name" [(ngModel)]="name"
+                [ngClass]="inputName.valid || (inputName.invalid && !form.submitted) || displayErrors===false ? '' : 'error-msg' ">
+
+            <input ngModel maxlength="2" required type="number" placeholder="Introduce your age" #inputAge="ngModel"
+                name="age" [(ngModel)]="age"
+                [ngClass]="inputAge.valid || (inputAge.invalid && !form.submitted) || displayErrors===false ? '' : 'error-msg' ">
+
+            <select ngModel required #inputHobby="ngModel" (click)="choose()" name="hobby" [(ngModel)]="hobby"
+                [ngClass]="inputAge.valid || (inputAge.invalid && !form.submitted) || displayErrors===false ? '' : 'error-msg' ">
+                <option value="">Select your hobby</option>
+                <option value="artist">Artist</option>
+                <option value="battleGirl">Battle Girl</option>
+                <option value="birdKeeper">Bird Kepper</option>
+                <option value="blackBelt">Black Belt</option>
+                <option value="breeder">Pokemon Breeder</option>
+                <option value="bugCatcher">Bug Catcher</option>
+                <option value="cameraman">Cameraman</option>
+                <option value="camper">Camper</option>
+                <option value="clown">Clown</option>
+                <option value="colector">Colector</option>
+                <option value="cowgirl">Cow Girl</option>
+                <option value="cyclist">Cyclist</option>
+                <option value="dragonTamer">Dragon Tamer</option>
+                <option value="fisherman">Fisherman</option>
+                <option value="gamer">Gamer</option>
+                <option value="guitarrist">Guitarrist</option>
+                <option value="hiker">Hiker</option>
+                <option value="jogger">Jogger</option>
+                <option value="picknicker">Picknicker</option>
+                <option value="pokeFan">PokeFan</option>
+                <option value="psychic">Psychic</option>
+                <option value="reporter">Reporter</option>
+                <option value="ruinManiac">Ruin Maniac</option>
+                <option value="sailor">Sailor</option>
+                <option value="scientist">Scientist</option>
+                <option value="skier">Skier</option>
+                <option value="swimmer">Swimmer</option>
+            </select>
+            <button mat-button type="submit" class="button2"
+                (click)="createTrainer(inputName.value, inputAge.value, inputHobby.value)">Create Trainer</button>
+            <button mat-button type="button" class="button2" (click)="clear()">Clear</button>
+        </form>
+    </div>
+
+    <div *ngIf="name !== '' || age!==null || hobby!==''" class="baraja">
+        <div class="container">
+            <img src={{photo}} width="80%" />
+            <h2>{{name}}</h2>
+        </div>
+    </div>
+
+    <div class="baraja">
+        <div *ngFor="let trainer of trainersList let i = index" [trainer]="trainer" [trainerIndex]="i"
+            (click)="showDetails(i)">
+            <div class="container">
+                <img src={{trainer.photo}} width="70%" />
+                <h2>{{trainer.name}}</h2>
+                <div class="trainer-details" *ngIf="showDetail[i]">
+                    <p class="p">Age: {{trainer.age}}</p>
+                    <p class="p">Hobby: {{trainer.hobby}}</p>
+                    <button mat-button class="button" (click)="deleteTrainer(i, trainer.id)">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

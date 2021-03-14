@@ -1,0 +1,27 @@
+<div class="pokemon-details">
+    <div>
+        <div>Hp</div>
+        <div>{{pokemon.stats[0].base_stat}}</div>
+    </div>
+    <div>
+        <div>Attack</div>
+        <div>{{pokemon.stats[1].base_stat}}</div>
+    </div>
+    <div>
+        <div>Defense</div>
+        <div>{{pokemon.stats[2].base_stat}}</div>
+    </div>
+    <div>
+        <div>Special Attack</div>
+        <div>{{pokemon.stats[3].base_stat}}</div>
+    </div>
+    <div>
+        <div>Special Defense</div>
+        <div>{{pokemon.stats[4].base_stat}}</div>
+    </div>
+    <div>
+        <div>Speed</div>
+        <div>{{pokemon.stats[5].base_stat}}</div>
+    </div>
+    <button mat-button class="button" (click)="deletePokemon()">Delete</button>
+</div>

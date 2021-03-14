@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+
+.pokemon-card {
+    display: flex;
+    width: 13%;
+    flex-direction: column;
+    align-content: center;
+    margin: 0 auto;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+
+
+.container {
+    background-color: #ffffff;
+    justify-content: center;
+    width: 250px;
+    margin: 30px;
+    text-align: center;
+	border-radius: 20px;
+    transition-duration: 0.4s;
+   
+}
+
+.container:hover{
+    background-color: #ffffff;
+    transition-duration: 0.4s;
+    box-shadow: 0px 0px 30px black;
+}
+
+.container img{
+    margin-top: 5px;
+    margin-bottom: -15px;
+    width: 150px;
+    height:150px;
+}
+
+.container h2{
+    color: #000000;
+    font-family: "Press Start 2P", cursive;
+    font-size: 17px;
+    text-transform: capitalize;
+}
+
+.container h3{
+    color: #000000;
+    font-size:16px;
+    margin-top: -10px;
+    padding-bottom: 20px;
+    font-family: "Press Start 2P", cursive;
+    font-size: 10px;
+}
+
+.baraja {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items:auto;
+    flex-wrap: wrap;
+    margin: 50px;
+
+}

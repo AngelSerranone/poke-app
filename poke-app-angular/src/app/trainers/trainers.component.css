@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+
+.form {
+  width: 30%;
+  margin: 50px auto;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-image: url(../../assets/background/pokemon-text-box.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.form * {
+  margin: 5px;
+  min-height: 30px;
+  padding-left: 10px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 11px;
+}
+
+.container {
+  background-color: #ffffff;
+  justify-content: center;
+  width: 250px;
+  margin: 30px;
+  text-align: center;
+  border-radius: 20px;
+  transition-duration: 0.4s;
+  padding-bottom: 10px;
+}
+
+.baraja {
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items:auto;
+  flex-wrap: wrap;
+  margin: 50px;
+
+}
+
+  .control-label.required:after { 
+    color: #d00;
+    content: "*";
+    position: absolute;
+    margin-left: 5px;
+    top:7px;
+  }
+
+  .error-msg {
+    border: 1px solid red;
+    background-color: rgb(248, 211, 211);
+  }
+
+  .container h3{
+    color: #000000;
+    font-size:16px;
+    margin-top: -10px;
+    padding-bottom: 20px;
+    font-family: "Press Start 2P", cursive;
+    font-size: 10px;
+}
+
+  .container h2{
+    color: #000000;
+    font-family: "Press Start 2P", cursive;
+    font-size: 17px;
+}
+  
+  .container:hover{
+    background-color: #ffffff;
+    transition-duration: 0.4s;
+    box-shadow: 0px 0px 30px black;
+}
+
+.container img{
+  margin-top: 5px;
+  margin-bottom: -15px;
+  width: 150px;
+  height:150px;
+  padding-bottom: 20px;
+}
+
+
+.button2 {
+  background-color: #FFDE00;
+  border-radius: 5px;
+  margin-left: 15px;
+  font-family: "Press Start 2P", cursive;
+}
+
+.button {
+  background-color: #ff0000;
+  border-radius: 10px;
+  margin: 25px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 11px;
+}
+
+.p {
+    font-family: "Press Start 2P", cursive;
+    font-size: 10px;
+}
+ 
+.trainer-details {
+  display: flex;
+  width: 95%;
+  flex-direction: column;
+  margin: 0 auto;
+  font-family: "Press Start 2P", cursive;
+  font-size: 10px;
+}
+
+
+
+
+
+
+ 

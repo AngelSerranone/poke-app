@@ -1,0 +1,8 @@
+<div class="baraja">
+    <div class="container" *ngFor = "let trainer of trainersList let i = index" [trainer]="trainer" [trainerIndex]="i" (click)="showDetails(i)">
+    <img src={{trainer.photo}} width="70%"/>
+    <h3>{{trainer.name}}</h3>
+    <app-trainer-details *ngIf="showDetail[i]" [trainer] = "trainer" [id] = "trainer.id" (deleteIdEvent)="deleteTrainer($event, i)">    
+    </app-trainer-details>
+</div>
+</div>

@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+
+header {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px #3B4CCA;
+    box-shadow: 0 3px 4px -2px #25318a;
+}
+
+.image {
+    padding: 25px;
+}
+
+/* Styles for tab labels */
+.mat-tab-label {
+    font-family: "Press Start 2P", cursive;
+    font-size: 11px;
+}
+
+/* Styles for the active tab label */
+.mat-tab-label.mat-tab-label-active {
+    color: #25318a;
+}
+
+.mat-tab-header {
+    border-bottom: 1px solid #25318a;
+    
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(102, 155, 102);
+    height: 50px;
+    border-top: 1px dashed black;
+    padding: 25px 30px 0 30px;
+    
+}
+
+footer p {
+  font-style: italic;
+  margin-right: 60px;
+  margin-left: 60px;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+article {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+main {
+    flex-grow: 1;
+}
+header, main, footer {
+    flex-shrink: 0;
+}
+

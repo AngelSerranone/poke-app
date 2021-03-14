@@ -1,0 +1,54 @@
+<head>
+    ...
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
+    ...
+</head>
+
+<div class="container">
+    <div class="left-panel">
+        <mat-selection-list (selectionChange)="showPokemon($event)" [multiple]="false">
+            <mat-list-option *ngFor="let pokemon of pokemonList?.results" [value]="getPokemonId(pokemon.url)" class="option">
+                <div class="list-image-container">
+                    <img [src]="getPokemonImageUrl(pokemon.url)" class="list-photo">
+                    {{pokemon.name}}
+                </div>
+            </mat-list-option>
+            <div class="pagination">
+                <button mat-mini-fab (click)="pagBack()" [disabled]="!hasPrevious" class="red-background">
+                    <mat-icon>arrow_back</mat-icon>
+                </button>
+                <button mat-mini-fab (click)="pagForward()" [disabled]="!hasNext" class="red-background">
+                    <mat-icon>arrow_forward</mat-icon>
+                </button>
+            </div>
+        </mat-selection-list>
+
+    </div>
+    <div class="poke-info-container">
+        <div class="poke-info" *ngIf="selectedPokemon && !loading else pokeInfoSpinner">
+            <div class="description-photo">
+                <img [src]="selectedPokemon?.sprites.front_default">
+            </div>
+            <h2 class="pokemon-name">{{selectedPokemon?.species.name}}</h2>
+            <div class="types">
+                <span> Type 1: {{selectedPokemon?.types[0]?.type.name}}</span>
+                <span *ngIf="selectedPokemon?.types[1]" > Type 2: {{selectedPokemon?.types[1]?.type.name}}</span>
+            </div>
+            <div class="attributes">
+                <span>Hp: {{getStat("hp")}} </span>
+                <span>Attack: {{getStat("attack")}} </span>
+                <span>Defense: {{getStat("defense")}} </span>
+
+                <span>Speed: {{getStat("speed")}} </span>
+                <span>Special Attack: {{getStat("special-attack")}} </span>
+                <span>Special Defense: {{getStat("special-defense")}} </span>
+            </div>
+            <div class="description">
+                <span>{{selectedPokemonDescription}}</span>
+            </div>
+        </div>
+        <ng-template #pokeInfoSpinner>
+            <mat-spinner *ngIf="selectedPokemon"></mat-spinner>
+        </ng-template>
+    </div>
+</div>

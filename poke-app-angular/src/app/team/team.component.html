@@ -1,0 +1,14 @@
+<div class="form">
+    <select [(ngModel)]="selectedTrainer" (click)="showPokemons()">
+        <option value="">Select your Trainer</option>
+        <option *ngFor = "let trainer of trainersList; let i = index"> {{ trainer.id }} - {{ trainer.name }} </option>
+    </select>
+    <input (keydown)="addPokemonWithEnter($event)" type="text" placeholder="Type a Pokemon name" [(ngModel)]="pokemonName">
+    <button mat-button class="button" (click)="addPokemonToTrainer()">Add Pokemon to Trainer</button>
+</div>
+
+<div class="trainer">
+    <h2 *ngIf="selectedTrainer !== ''"> {{selectedTrainer}}'s Team </h2>
+</div>
+
+<app-pokemon-card *ngIf="trainerId !== null" [trainerId]="trainerId"></app-pokemon-card>

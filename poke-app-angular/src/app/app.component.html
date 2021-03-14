@@ -1,0 +1,20 @@
+<article>
+    <header>
+        <img src="./assets/Header/logo.png" alt="" class="image">
+    </header>
+    
+    <main>
+        <mat-tab-group dynamicHeight mat-align-tabs="center"> 
+            <mat-tab label="Team"> <app-team (click)="onTeamTabClick()"></app-team> </mat-tab>
+            <mat-tab label="Pokedex"> <app-pokedex></app-pokedex> </mat-tab>
+            <mat-tab label="Trainers"> <app-trainers></app-trainers></mat-tab>
+        </mat-tab-group>
+    </main>
+    
+    <footer>
+        <p>An Ironhack Pokemon project by</p>
+        <p>Adrià López - Ángel Serrano - Ester Naranjo - Silvia Sánchez - Adrián Maza</p>
+    </footer>
+    
+</article>
+

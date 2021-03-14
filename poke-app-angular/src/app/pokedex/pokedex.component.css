@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* :host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+} */
+
+
+.container {
+    border: 1px solid black;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+	border-radius: 20px;
+    display: grid;
+    grid-template-columns: 2fr 6fr;
+    max-height: 630px; 
+    height: 630px;
+    margin: 10vh 15vw 10vh 15vw;
+    background: rgba(255, 255, 255, 0.75);
+    min-width: fit-content;
+    max-width: 70vw;
+    width: 70vw;
+}
+
+.container mat-selection-list {
+    outline: none;
+}
+
+.mat-list-option {
+    min-height: 60px !important;
+    height: 60px !important;
+}
+
+.option {
+    border-bottom: 1px solid black;
+    min-height: 60px !important;
+    height: 55px;
+    font-family: "Press Start 2P", cursive;
+    text-transform: capitalize;
+}
+
+.option:last-child {
+    margin-bottom: 50px;
+}
+
+.list-image-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    max-height: 65px;
+}
+
+.list-photo {
+   width: fit-content;
+   height: fit-content;
+   max-height: 60px;
+   max-width: 60px;
+}
+
+.description-photo{
+    margin: 0 auto 0 auto;
+    max-height: 200px;
+}
+
+.description-photo > img {
+    height: 240px;
+    margin: -15px;
+}
+
+.poke-info {
+    display: grid;
+    grid-template-rows: 6fr 1fr 1fr 2fr 3fr;
+    align-items: center;
+    max-height: inherit;
+}
+
+.poke-info-container {
+    border-left: 1px solid black;
+    max-height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-panel {
+    max-height: inherit;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 60px;
+}
+
+.pagination mat-icon {
+    cursor: pointer;
+    outline: none;
+}
+
+.pokemon-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 32px;
+    width: 300px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.50);
+    border-radius: 10px;
+    padding: 5px;
+    font-family: "Press Start 2P", cursive;
+    text-transform: capitalize;
+    border: 1px solid black;
+
+}
+
+.types {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 100px;
+    font-family: "Press Start 2P", cursive;
+    text-transform: capitalize;
+    margin-bottom: 22px;
+   
+    
+}
+
+.types span {
+    padding: 10px;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.50);
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid black;
+    margin-right: 20px;
+}
+
+.attributes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+    margin: auto 22% auto 22%;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.50);
+    border-radius: 10px;
+    padding: 5px;
+    font-family: "Press Start 2P", cursive;
+    text-transform: capitalize;
+    font-size: 12.5px;
+    border: 1px solid black;
+}
+
+.description {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    align-self: flex-start;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.50);
+    border-radius: 10px;
+    padding: 5px;
+    font-family: "Press Start 2P", cursive;
+    text-transform: capitalize;
+    font-size: 12.5px;
+    border: 1px solid black;
+}
+
+
+.red-background {
+    background-color: red;
+}
+
+:host ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {   
+    stroke: red;
+}
